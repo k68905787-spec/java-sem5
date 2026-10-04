@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.*;
+
+class StudentForm {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Student Form");
+
+        f.setLayout(new FlowLayout());
+
+        f.add(new JLabel("Name"));
+        JTextField n = new JTextField(15);
+        f.add(n);
+
+        f.add(new JLabel("Register No"));
+        JTextField r = new JTextField(15);
+        f.add(r);
+
+        f.add(new JLabel("Course"));
+        JComboBox<String> c = new JComboBox<>(
+            new String[]{"BCA","BSc IT","BSc CS"});
+        f.add(c);
+
+        JButton b = new JButton("Submit");
+        f.add(b);
+
+        b.addActionListener(e ->
+            JOptionPane.showMessageDialog(f,
+            "Name: " + n.getText() +
+            "\nReg No: " + r.getText() +
+            "\nCourse: " + c.getSelectedItem()));
+
+        f.setSize(300,250);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
