@@ -1,9 +1,0 @@
-class Main {
-    public static void main(String[] args) {
-        Main a = new Main();
-        a = null;
-
-        System.gc();
-        System.out.println("Garbage collection requested");
-    }
-}
