@@ -1,0 +1,13 @@
+class Bank {
+    synchronized void display() {
+        System.out.println("Safe transaction");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Bank b = new Bank();
+        new Thread(() -> b.display()).start();
+        new Thread(() -> b.display()).start();
+    }
+}
